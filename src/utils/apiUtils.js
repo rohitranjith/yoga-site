@@ -2,7 +2,7 @@ import axios from "axios"
 import { alertMsg } from "./basicUtils";
 
 export const BASE_URL = import.meta.env.DEV ? import.meta.env.VITE_LOCAL_SERVER_URL : import.meta.env.VITE_LIVE_SERVER_URL;
-export const BASE_DOWNLOAD_URL = BASE_URL.replace("/api", "");
+export const BASE_DOWNLOAD_URL = BASE_URL ? BASE_URL.replace("/api", "") : "";
 
 export const axiosFetch = axios.create({
     baseURL: BASE_URL,
